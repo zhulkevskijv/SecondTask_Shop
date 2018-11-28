@@ -2,18 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Omni Internet Shop</title>
+    <title>Internet Shop</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-<h1 class="text-center">Demo Shop</h1>
+<header class="border">
 
-<div class="container">
-    <div class="row product-grid">
+    <nav class="rounded header-menu navbar fixed-top navbar-light flex-md-row navbar-expand-sm">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo.png" width="90" height="70" alt="Swittchon">
+        </a>
+        <div class="nav-item ml-5 mr-3">
+            <button class="nav-link" href="#">All products</button>
+        </div>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdownMenuLink" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">All</a>
+                <a class="dropdown-item" href="#">Categories</a>
+                <a class="dropdown-item" href="#"></a>
+            </div>
+        </div>
+        <div class="nav-item right ml-auto mr-2">
+            <button type="button" class="btn cart" >
+                <img src="../img/cart.png" width="40" height="40" alt="Cart">
+            </button>
+        </div>
+
+    </nav>
+
+
+</header>
+
+
+<div class="container production">
+    <div class="row product-grid  py-5">
 
     </div>
 </div>
-<div>Hello!</div>
-<script src="./js/main.js"></script>
+
+<footer class="page-footer py-4 border">
+
+    <div class="rounded text-left ml-5">© 2018 Copyright:
+        <a href="https://github.com/zhulkevskijv"> Vladyslav Zhulkevskyi</a>
+    </div>
+    <script src="./js/main.js"></script>
+</footer>
+
+
 </body>
 </html>

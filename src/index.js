@@ -1,12 +1,15 @@
 import './scss/main.scss';
+
 //import 'bootstrap';	// with JS!!
-import 'bootstrap/dist/css/bootstrap.min.css';	// only minified CSS
+//import 'bootstrap/dist/css/bootstrap.min.css';	// only minified CSS
 console.log("Hello deadlines");
 console.log(`The time is ${new Date()}`);
 
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
+
+import 'bootstrap/js/dist/dropdown';
 
 let _makeProduct = require('./modules/product-html');
 
