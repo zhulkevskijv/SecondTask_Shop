@@ -6,41 +6,37 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-<header class="border">
-
-    <nav class="rounded header-menu navbar fixed-top navbar-light flex-md-row navbar-expand-sm">
-        <a class="navbar-brand" href="#">
-            <img src="../img/logo.png" width="90" height="70" alt="Swittchon">
-        </a>
-        <div class="nav-item ml-5 mr-3">
-            <button class="nav-link" href="#">All products</button>
-        </div>
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle mx-3" href="#" id="navbarDropdownMenuLink" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
+<header>
+    <nav class="header-menu navbar ">
+            <a class="navbar-brand mx-lg-4 mx-md-2 mx-sm-auto">
+                <img src="../img/logo.png" width="110" height="90" alt="Connect IT">
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">All</a>
-                <a class="dropdown-item" href="#">Categories</a>
-                <a class="dropdown-item" href="#"></a>
+            <div class="nav-item mx-lg-4 mx-md-2 mx-sm-auto">
+                <button class="nav-link btn-success btn-lg button-all-product" href="#">All products</button>
             </div>
-        </div>
-        <div class="nav-item right ml-auto mr-2">
-            <button type="button" class="btn cart" >
+
+            <div class="nav-item dropdown mx-lg-4 mx-md-2 mx-sm-auto">
+                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="btnDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </button>
+                <div class="dropdown-menu categories" aria-labelledby="btnDropdown"></div>
+
+            </div>
+        <div class="nav-item ml-auto mr-lg-2 mr-sm-0 ">
+            <button type="button" class="btn btn-dark cart">
                 <img src="../img/cart.png" width="40" height="40" alt="Cart">
             </button>
         </div>
 
     </nav>
-
-
 </header>
 
+<div class="main">
+    <div class="container my-5">
+        <div class="row product-grid py-5">
 
-<div class="container production">
-    <div class="row product-grid  py-5">
-
+        </div>
     </div>
 </div>
 
