@@ -1,0 +1,49 @@
+@import "~bootstrap/scss/bootstrap";
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(30deg, #f7e3cb 15%, #329aaa 50%, #f7e3cb 85%);
+  //background-image: url(/img/background-laptop.jpg);
+  //background-size:cover ;
+  //background-color: #f7e3cb;
+}
+.bg-table{
+  background: #6CCFF6;
+}
+.product-image {
+  max-height: 200px;
+  object-fit: contain;
+}
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap {
+  padding-bottom: 2.5rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+.big-font-cart{
+  font-size: 2.5rem;
+}
+.crossed {
+  text-decoration: line-through;
+}
+
+.product-special-price {
+  color: rgba(195, 8, 10, 0.97);
+}
+
+.dropdown-menu {
+  padding: 0px !important;
+  margin: 0px !important;
+  line-height: normal;
+}
