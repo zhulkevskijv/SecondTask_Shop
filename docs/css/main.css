@@ -6318,10 +6318,51 @@ a.text-dark:hover, a.text-dark:focus {
   box-sizing: border-box; }
 
 body {
-  background-image: linear-gradient(30deg, #f7e3cb 15%, #329aaa 50%, #f7e3cb 85%); }
+  background-color: #030f1e; }
 
 .bg-table {
-  background: #6CCFF6; }
+  background: #ffffff; }
+
+.bg-button-menu,
+.bg-button-menu:active,
+.bg-button-menu:focus {
+  outline: none;
+  text-decoration: none; }
+
+.bg-button-menu {
+  background: #030f1e !important;
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  border: 2px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  border-radius: 0;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 1px;
+  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.bg-button-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.bg-button-menu:hover {
+  background: transparent !important; }
+
+.bg-button-menu:hover:before {
+  bottom: 0;
+  top: auto;
+  height: 100%; }
 
 .product-image {
   max-height: 200px;
@@ -6330,9 +6371,6 @@ body {
 .page-container {
   position: relative;
   min-height: 100vh; }
-
-.content-wrap {
-  padding-bottom: 2.5rem; }
 
 footer {
   position: absolute;
@@ -6349,7 +6387,165 @@ footer {
   color: rgba(195, 8, 10, 0.97); }
 
 .dropdown-menu {
-  padding: 0px !important;
-  margin: 0px !important;
+  padding: 0 !important;
+  margin: 0 !important;
   line-height: normal; }
+
+.me {
+  color: #3AF9DA; }
+
+.me:hover {
+  text-decoration: none;
+  color: #FAF444; }
+
+.buy {
+  background: #268bf7 !important;
+  color: #ffffff !important; }
+
+.animation {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 10%;
+  overflow: hidden; }
+
+.wave {
+  height: 100%;
+  width: 1.5%;
+  bottom: 0;
+  border-radius: 20px;
+  position: absolute; }
+
+.animation div:nth-of-type(1) {
+  animation: wave 17s 0.000s linear infinite; }
+
+.animation div:nth-of-type(2) {
+  animation: wave 17s -16.227s linear infinite; }
+
+.animation div:nth-of-type(3) {
+  animation: wave 17s -15.455s linear infinite; }
+
+.animation div:nth-of-type(4) {
+  animation: wave 17s -14.682s linear infinite; }
+
+.animation div:nth-of-type(5) {
+  animation: wave 17s -13.909s linear infinite; }
+
+.animation div:nth-of-type(6) {
+  animation: wave 17s -13.136s linear infinite; }
+
+.animation div:nth-of-type(7) {
+  animation: wave 17s -12.364s linear infinite; }
+
+.animation div:nth-of-type(8) {
+  animation: wave 17s -11.591s linear infinite; }
+
+.animation div:nth-of-type(9) {
+  animation: wave 17s -10.818s linear infinite; }
+
+.animation div:nth-of-type(10) {
+  animation: wave 17s -10.045s linear infinite; }
+
+.animation div:nth-of-type(11) {
+  animation: wave 17s  -9.273s linear infinite; }
+
+.animation div:nth-of-type(12) {
+  animation: wave 17s  -8.500s linear infinite; }
+
+.animation div:nth-of-type(13) {
+  animation: wave 17s  -7.727s linear infinite; }
+
+.animation div:nth-of-type(14) {
+  animation: wave 17s  -6.955s linear infinite; }
+
+.animation div:nth-of-type(15) {
+  animation: wave 17s  -6.182s linear infinite; }
+
+.animation div:nth-of-type(16) {
+  animation: wave 17s  -5.409s linear infinite; }
+
+.animation div:nth-of-type(17) {
+  animation: wave 17s  -4.636s linear infinite; }
+
+.animation div:nth-of-type(18) {
+  animation: wave 17s  -3.864s linear infinite; }
+
+.animation div:nth-of-type(19) {
+  animation: wave 17s  -3.091s linear infinite; }
+
+.animation div:nth-of-type(20) {
+  animation: wave 17s  -2.318s linear infinite; }
+
+.animation div:nth-of-type(21) {
+  animation: wave 17s  -1.545s linear infinite; }
+
+.animation div:nth-of-type(22) {
+  animation: wave 17s  -0.773s linear infinite; }
+
+@keyframes wave {
+  0% {
+    left: -2%;
+    background: #3B44D1; }
+  5% {
+    background: #9337FE; }
+  10% {
+    height: 35%;
+    margin-top: -5%;
+    background: #C532FC; }
+  15% {
+    background: #F639F8; }
+  20% {
+    height: 100%;
+    margin-top: -17%;
+    background: #F236C8; }
+  25% {
+    background: #FF2F8D; }
+  30% {
+    height: 35%;
+    margin-top: -5%;
+    background: #EE3860; }
+  35% {
+    background: #DC5245; }
+  40% {
+    height: 100%;
+    margin-top: -17%;
+    background: #F38643; }
+  45% {
+    background: #F8B435; }
+  50% {
+    height: 35%;
+    margin-top: -5%;
+    background: #FAF444; }
+  55% {
+    background: #E0FF3B; }
+  60% {
+    height: 100%;
+    margin-top: -17%;
+    background: #E1FF3C; }
+  65% {
+    background: #46F443; }
+  70% {
+    height: 35%;
+    margin-top: -5%;
+    background: #54E67B; }
+  75% {
+    background: #4DF3A9; }
+  80% {
+    height: 100%;
+    margin-top: -17%;
+    background: #3AF9DA; }
+  85% {
+    background: #36EBF4; }
+  90% {
+    height: 35%;
+    margin-top: -5%;
+    background: #3DB3F3; }
+  95% {
+    background: #3C82F1; }
+  100% {
+    height: 100%;
+    margin-top: -17%;
+    left: 100%;
+    background: #5B38EE; } }
 
