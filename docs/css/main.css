@@ -6312,60 +6312,117 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+.bg-table, .button-menu {
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082) 1 !important;
+  -moz-border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082) 1 !important;
+  -o-border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082) 1 !important;
+  -webkit-border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082) 1;
+  border-image-slice: 1; }
+
+.green {
+  color: #39e711; }
+
+.red {
+  color: #e22024; }
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none; }
+
+input {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  user-select: text; }
+
+p, span {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text; }
 
 body {
   background-color: #030f1e; }
 
+.logo {
+  width: 110px;
+  height: 90px; }
+
+.dropdown-menu {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: normal; }
+
 .bg-table {
-  background: #ffffff; }
+  background: #1a1a1a;
+  border-image: linear-gradient(180deg, #9b2800, #8a0200, #9b093b, #710049); }
 
-.bg-button-menu,
-.bg-button-menu:active,
-.bg-button-menu:focus {
-  outline: none;
-  text-decoration: none; }
+.button-menu,
+.button-menu:active,
+.button-menu:focus, .buy,
+.buy:active, .buy:focus {
+  outline: none !important;
+  text-decoration: none !important; }
 
-.bg-button-menu {
+.button-menu {
   background: #030f1e !important;
   color: white;
   display: inline-block;
   position: relative;
   padding: 10px 20px;
-  border: 2px solid;
-  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-  border-image-slice: 1;
   border-radius: 0;
   text-transform: uppercase;
   overflow: hidden;
   letter-spacing: 1px;
   transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .button-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .button-menu:hover {
+    background: transparent !important; }
+  .button-menu:hover:before {
+    bottom: 0;
+    top: auto;
+    height: 100%; }
 
-.bg-button-menu:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  z-index: -1;
-  color: white;
-  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-  transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.font-cart {
+  font-size: 0.8rem; }
 
-.bg-button-menu:hover {
-  background: transparent !important; }
+.cart-img {
+  width: 40px;
+  height: 40px; }
 
-.bg-button-menu:hover:before {
-  bottom: 0;
-  top: auto;
-  height: 100%; }
+.image-container {
+  height: 200px; }
 
 .product-image {
   max-height: 200px;
+  object-fit: contain; }
+
+.center-product-image {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.order-image {
+  max-height: 100px;
   object-fit: contain; }
 
 .page-container {
@@ -6377,37 +6434,63 @@ footer {
   bottom: 0;
   width: 100%; }
 
-.big-font-cart {
+.big-font-modal {
   font-size: 2.5rem; }
+
+.modal-description {
+  word-wrap: break-word; }
 
 .crossed {
   text-decoration: line-through; }
 
 .product-special-price {
-  color: rgba(195, 8, 10, 0.97); }
+  color: rgba(195, 8, 10, 0.97);
+  font-weight: bold; }
 
-.dropdown-menu {
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: normal; }
+.total-price {
+  border-radius: 3px; }
 
 .me {
-  color: #3AF9DA; }
+  color: #ff3000; }
+  .me:hover {
+    text-decoration: none;
+    color: #d50082; }
 
-.me:hover {
-  text-decoration: none;
-  color: #FAF444; }
+.more {
+  background: #ed1690;
+  color: #ffffff !important; }
 
 .buy {
-  background: #268bf7 !important;
+  background: #ED0200;
   color: #ffffff !important; }
+  .buy:focus {
+    background: #e56a17; }
+
+@media (max-width: 600px) {
+  .logo {
+    width: 80px;
+    height: 60px; }
+  .btn-lg, .btn-group-lg > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem; }
+  .nav-item {
+    display: block;
+    margin: 0 auto !important; }
+  .button-menu {
+    letter-spacing: 0; }
+  .cart-img {
+    width: 25px;
+    height: 25px; } }
+
+.name-border {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.125); }
 
 .animation {
   position: relative;
   display: block;
   width: 100%;
   height: 0;
-  padding-top: 10%;
+  padding-top: 8%;
   overflow: hidden; }
 
 .wave {
@@ -6418,70 +6501,70 @@ footer {
   position: absolute; }
 
 .animation div:nth-of-type(1) {
-  animation: wave 17s 0.000s linear infinite; }
+  animation: wave 22s 0.000s linear infinite; }
 
 .animation div:nth-of-type(2) {
-  animation: wave 17s -16.227s linear infinite; }
+  animation: wave 22s -21s linear infinite; }
 
 .animation div:nth-of-type(3) {
-  animation: wave 17s -15.455s linear infinite; }
+  animation: wave 22s -20s linear infinite; }
 
 .animation div:nth-of-type(4) {
-  animation: wave 17s -14.682s linear infinite; }
+  animation: wave 22s -19s linear infinite; }
 
 .animation div:nth-of-type(5) {
-  animation: wave 17s -13.909s linear infinite; }
+  animation: wave 22s -18s linear infinite; }
 
 .animation div:nth-of-type(6) {
-  animation: wave 17s -13.136s linear infinite; }
+  animation: wave 22s -17s linear infinite; }
 
 .animation div:nth-of-type(7) {
-  animation: wave 17s -12.364s linear infinite; }
+  animation: wave 22s -16s linear infinite; }
 
 .animation div:nth-of-type(8) {
-  animation: wave 17s -11.591s linear infinite; }
+  animation: wave 22s -15s linear infinite; }
 
 .animation div:nth-of-type(9) {
-  animation: wave 17s -10.818s linear infinite; }
+  animation: wave 22s -14s linear infinite; }
 
 .animation div:nth-of-type(10) {
-  animation: wave 17s -10.045s linear infinite; }
+  animation: wave 22s -13s linear infinite; }
 
 .animation div:nth-of-type(11) {
-  animation: wave 17s  -9.273s linear infinite; }
+  animation: wave 22s  -12s linear infinite; }
 
 .animation div:nth-of-type(12) {
-  animation: wave 17s  -8.500s linear infinite; }
+  animation: wave 22s  -11s linear infinite; }
 
 .animation div:nth-of-type(13) {
-  animation: wave 17s  -7.727s linear infinite; }
+  animation: wave 22s  -10s linear infinite; }
 
 .animation div:nth-of-type(14) {
-  animation: wave 17s  -6.955s linear infinite; }
+  animation: wave 22s  -9s linear infinite; }
 
 .animation div:nth-of-type(15) {
-  animation: wave 17s  -6.182s linear infinite; }
+  animation: wave 22s  -8s linear infinite; }
 
 .animation div:nth-of-type(16) {
-  animation: wave 17s  -5.409s linear infinite; }
+  animation: wave 22s  -7s linear infinite; }
 
 .animation div:nth-of-type(17) {
-  animation: wave 17s  -4.636s linear infinite; }
+  animation: wave 22s  -6s linear infinite; }
 
 .animation div:nth-of-type(18) {
-  animation: wave 17s  -3.864s linear infinite; }
+  animation: wave 22s  -5s linear infinite; }
 
 .animation div:nth-of-type(19) {
-  animation: wave 17s  -3.091s linear infinite; }
+  animation: wave 22s  -4s linear infinite; }
 
 .animation div:nth-of-type(20) {
-  animation: wave 17s  -2.318s linear infinite; }
+  animation: wave 22s  -3s linear infinite; }
 
 .animation div:nth-of-type(21) {
-  animation: wave 17s  -1.545s linear infinite; }
+  animation: wave 22s  -2s linear infinite; }
 
 .animation div:nth-of-type(22) {
-  animation: wave 17s  -0.773s linear infinite; }
+  animation: wave 22s  -1s linear infinite; }
 
 @keyframes wave {
   0% {

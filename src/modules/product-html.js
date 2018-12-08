@@ -6,16 +6,20 @@ let _makeHtml = ({
                      price,
                      special_price
                  }) => {
-    let $product = $(`<div class="description-toggle card bg-table card-col-xs-12 col-sm-4 col-md-4 col-lg-3 py-lg-3 py-sm-2 align-middle" 
+    let $product = $(`<div class="description-toggle text-center card bg-table col-xs-12 col-sm-6 col-md-4 col-lg-3 py-3" 
                                     data-product-id="${id}" >`);
-    $product.append($(`<div class="image-container" data-toggle="modal" data-target="#myModal" ><img src="${image_url}" alt="${name}" class="card-img bg-light product-image"></div>`));
-    $product.append($(`<span class="product-title card-header" data-toggle="modal" data-target="#myModal">`).text(name));
-    $product.append($(`<span class="product-price ${special_price == null ? '' : 'crossed'}" data-toggle="modal" data-target="#myModal">`).text(`${price} hrn`));
+    let $body=$(`<div class="my-auto">`);
+    $body.append($(`<div class="image-container"><img src="${image_url}" alt="${name}" class="center-product-image product-image card-img bg-white"></div>`));
+    $body.append($(`<span class="text-white d-block py-1 name-border">`).text(name));
+    $body.append($(`<span class="text-white d-block ${special_price == null ? '' : 'crossed'}">`).text(`${price} hrn`));
     if (special_price != null) {
-        $product.append($(`<span class = "product-special-price" data-toggle="modal" data-target="#myModal">`).text(`${special_price} hrn`));
+        $body.append($(`<span class = "product-special-price d-block">`).text(`${special_price} hrn`));
     }
-    $product.append($(`<button class="btn buy" data-product-id="${id}">`).text("Buy"));
-
+    $product.append($body);
+    let $buttons=$(`<div class="mt-auto">`);
+    $buttons.append($(`<button class="btn more mx-1 px-3" data-toggle="modal" data-target="#my-modal">`).text("More"));
+    $buttons.append($(`<button class="btn buy mx-1 px-3" data-product-id="${id}">`).text("Buy"));
+    $product.append($buttons);
     return $product;
 };
 
