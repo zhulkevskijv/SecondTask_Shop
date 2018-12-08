@@ -8,7 +8,7 @@ let _makeOrder= ({
                      counterID,
                      product
                  }) => {
-    let $productOrder=$(`<div class="product-order d-block my-1 border-dark text-center col-12 " data-product-id="${product.id}">`);
+    let $productOrder=$(`<div class="product-order d-block mt-auto py-1 text-center col-lg-6 col-sm-12" data-product-id="${product.id}">`);
     $productOrder.append($(`<img src="${product.image_url}" alt="${product.name}" class="order-image">`));
     $productOrder.append($(`<span class="d-block">`).text(product.name));
     $productOrder.append($(`<span class="d-inline-block bg-dark price-order m-1 p-1 text-light font-cart">`).text(`Price: ${product.special_price == null ? product.price : product.special_price} hrn`));
@@ -16,7 +16,7 @@ let _makeOrder= ({
     $productOrder.append($(`<button class="btn btn-dark  minus mx-1 px-1 font-cart">`).text("-"));
     $productOrder.append($(`<span class="bg-light px-2 count font-cart" data-quantity="${counterID}">`).text(counterID));
     $productOrder.append($(`<button class="btn btn-dark  plus mx-1 px-1 font-cart">`).text("+"));
-    $productOrder.append($(`<button class="btn btn-dark remove d-block mx-auto mt-1 font-cart">`).text("Remove"));
+    $productOrder.append($(`<button class="btn btn-danger remove d-block mx-auto mt-1 font-cart">`).text("Remove"));
     return $productOrder;
 };
 let _makeForm=() => {

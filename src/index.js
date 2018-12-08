@@ -35,6 +35,7 @@ jQuery.ajax({
     },
 });
 
+
 //adds categories to button "categories"
 jQuery.ajax({
     url: 'https://nit.tron.net.ua/api/category/list',
@@ -48,6 +49,7 @@ jQuery.ajax({
         alert("An error occured: " + xhr.status + " " + xhr.statusText);
     },
 });
+
 
 //adds products by clicking button "All products"
 $(document).on('click', '.button-all-products', function () {
@@ -65,6 +67,7 @@ $(document).on('click', '.button-all-products', function () {
         },
     });
 });
+
 
 //adds products of chosen category
 //the category is chosen in dropdown menu "Categories"
@@ -84,6 +87,8 @@ $(document).on('click', '.category', function () {
         },
     });
 });
+
+
 // shows pop-up window when clicking on any information of the product
 $(document).on('click', '.description-toggle', function () {
     let $idProduct = $(this).attr("data-product-id");
@@ -102,6 +107,7 @@ $(document).on('click', '.description-toggle', function () {
         },
     });
 });
+
 
 //add product to order array
 $(document).on('click', '.buy', function () {
@@ -122,12 +128,20 @@ $(document).on('click', '.buy', function () {
             if (fl)
                 productArray.push({counterID: 1, product: json});
             sessionStorage.setItem("productArray",JSON.stringify(productArray));
+            $("#my-modal").modal('hide');
+            $(".modal-footer").empty();
+            $(".modal-body-2").empty();
+            $(".modal-body-2").append($(`<span class="d-block my-5 mx-2">`).text(`\"${json.name}\" was added to cart!`));
+            $(".mfoot-2").append($(`<button class="btn btn-secondary" data-dismiss="modal">`).text("Close"));
+            $("#result-modal").modal('show');
         },
         error: function (xhr) {
             alert("An error occured: " + xhr.status + " " + xhr.statusText);
         },
     });
 });
+
+
 // if the client didn't buy anything, the cart is empty
 // else make a menu to place an order
 $(document).on('click', '.cart', function () {
@@ -141,19 +155,25 @@ $(document).on('click', '.cart', function () {
             return a.product.id - b.product.id;
         });
         $(".modal-header").append($(`<span class="modal-title big-font-modal">`).text("Cart"));
-        productArray.forEach(product => $(".modal-body").append(_makeOrder(product)));
-        productArray.forEach(product => $totalPrice += Number(product.counterID) * Number(product.product.special_price == null ? product.product.price : product.product.special_price));
+        $(".modal-body").append($(`<div class="row cart-row my-2">`));
+        productArray.forEach(function(product){
+            $(".cart-row").append(_makeOrder(product));
+            $totalPrice += Number(product.counterID) * Number(product.product.special_price == null ? product.product.price : product.product.special_price);
+        });
         $(".modal-body").append($(`<div class="total-price bg-dark d-inline-block p-1 text-white">`).text(`Total price: ${Number.parseFloat($totalPrice).toFixed(2)} hrn`));
         $(".modal-body").append(_makeForm());
         $(".modal-footer").append($(`<button class="btn btn-success btn-order">`).text("Make an order"));
         $(".modal-footer").append($(`<button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">`).text("Close"));
     }
 });
+
+
 //clears price when exiting from the cart
 $(document).on('click', '.close-btn', function () {
     $totalPrice = 0;
     $("#my-modal").modal('hide');
 });
+
 
 //increase quantity of products
 $(document).on('click', '.plus', function () {
@@ -171,13 +191,14 @@ $(document).on('click', '.plus', function () {
     sessionStorage.setItem("productArray",JSON.stringify(productArray));
 });
 
+
 //reduce quantity of product
 $(document).on('click', '.minus', function () {
     let $counter = $(this).parent().children('.count').first().attr("data-quantity");
     let $idProduct = $(this).parent().attr("data-product-id");
     if (Number($counter) === 1) {
         $(this).parent().remove();
-        if ($(".modal-body").children(".product-order").length === 0) {
+        if ($(".cart-row").children(".product-order").length === 0) {
             $(".modal-body").empty();
             $(".modal-body").append($(`<p class="modal-description">`).text("Your cart is now empty. Choose device and add it to cart."));
         }
@@ -203,11 +224,12 @@ $(document).on('click', '.minus', function () {
     sessionStorage.setItem("productArray",JSON.stringify(productArray));
 });
 
+
 //Removes product from cart
 $(document).on('click', '.remove', function () {
     let $idProduct = $(this).parent().attr("data-product-id");
     $(this).parent().remove();
-    if ($(".modal-body").children(".product-order").length === 0) {
+    if ($(".cart-row").children(".product-order").length === 0) {
         $(".modal-body").empty();
         $(".modal-body").append($(`<p class="modal-description">`).text("Your cart is now empty. Choose device and add it to cart."));
     }
@@ -220,6 +242,7 @@ $(document).on('click', '.remove', function () {
         }
     sessionStorage.setItem("productArray",JSON.stringify(productArray));
 });
+
 
 //makes a post request
 $(document).on('click', '.btn-order', function () {

@@ -13,7 +13,7 @@ let _makeModal= ({
     if (special_price != null) {
         $(".modal-body").append($(`<span class = "d-block product-special-price">`).text(`${special_price} hrn`));
     }
-    $(".modal-footer").append($(`<button class="btn btn-success" data-product-id="${id}">`).text("Buy"));
+    $(".modal-footer").append($(`<button class="btn buy" data-product-id="${id}">`).text("Buy"));
     $(".modal-footer").append($(`<button class="btn btn-secondary" data-dismiss="modal">`).text("Close"));
 };
 module.exports = _makeModal;
